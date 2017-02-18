@@ -14,8 +14,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
 
-from distutils.core import setup
-from battmon.values import internal_config
+from setuptools import setup
+
+from battmon.battmonlibs import internal_config
 
 setup(
 
@@ -23,7 +24,11 @@ setup(
     version=internal_config.VERSION,
     license=internal_config.LICENSE,
     description=internal_config.DESCRIPTION,
-    packages=['battmon', 'battmon.scripts', 'battmon.monitor', 'battmon.notifications', 'battmon.values', 'battmon.sounds' ],
+    packages=['battmon', 'battmon.battmonlibs'],
     author=internal_config.AUTHOR,
     author_email=internal_config.AUTHOR_EMAIL,
-    )
+    entry_points={
+          'console_scripts': ['battmon = battmon.battmonlibs.battmon:run_main'],
+      },
+
+)
