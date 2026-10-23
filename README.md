@@ -1,4 +1,4 @@
-# Battmon is DEAD!
+# Battmon is not anymore maintained!
 If you want to do something usefull with it, just fork it and make it better ;)
 
 ## Battmon
